@@ -1,8 +1,18 @@
 window.onload = function (e) {
-    liff.init(function (data) {
-        initializeApp(data);
+//     liff.init(function (data) {
+//         initializeApp(data);
+//     });
+// };
+
+liff.init({
+    liffId: '1657224408-bZwYKJgB', // Use own liffId
+})
+    .then(() => {
+        // start to use LIFF's api
+    })
+    .catch((err) => {
+        console.log(err);
     });
-};
 
 function initializeApp(data) {
     document.getElementById('languagefield').textContent = data.language;
