@@ -31,12 +31,27 @@
             <input class="form-control w-100 mt-1" name="hatunetu" required>
         </div>
     　　<div>
-        <p>テスト<br>
-          <input type="checkbox" name="q1" value="その1"> その1
-          <input type="checkbox" name="q1" value="その2"> その2
-          <input type="checkbox" name="q1" value="その3"> その3
-       </p>
-          </div>
+        <p class="mt-3">どの分野のお知らせ配信を希望しますか？</p>
+         <div>
+          <input type="checkbox" name="bousai" value="1" disabled="disabled" checked> 防災情報※必須です
+         </div>
+          <div>
+          <input type="checkbox" name="bouhan" value="2" > 防犯に関する情報
+         </div>
+         <div>
+          <input type="checkbox" name="kasai" value="3" > 火災予防に関する情報
+         </div>
+            <div>
+          <input type="checkbox" name="seikatsu" value="4" > 交通安全、健康に関する情報
+         </div>
+             <div>
+          <input type="checkbox" name="event" value="5" > 各種イベント情報
+         </div>
+          <div>
+          <input type="checkbox" name="gikai" value="6" > 市議会からのお知らせ
+         </div>
+          
+        
         
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
