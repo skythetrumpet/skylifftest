@@ -84,12 +84,12 @@
 
         $(function () {
             $('form').submit(function () {
-                const bousai    = $('input[name="bousai"]').val();
+                const bousai = $('input[name="bousai"]').val();
                 const kasai = $('input[name="kasai"]').val();
                 const anzen  = $('input[name="anzen"]').val();
                 const event  = $('input[name="event"]').val();
                 const gikai = $('input[name="gikai"]').val();
-                const msg = `${bousai}\n${kasai}\n${anzen}\n${gikai}\n${gikai}`;
+                const msg = `${bousai}\n${kasai}\n${anzen}\n${event}\n${gikai}`;
                 sendText(msg);
                 return false;
             });
