@@ -84,11 +84,11 @@
 
         $(function () {
             $('form').submit(function () {
-                const bousai = $('input[name="bousai"]').val();
-                const kasai = $('input[name="kasai"]').val();
-                const anzen  = $('input[name="anzen"]').val();
-                const event  = $('input[name="event"]').val();
-                const gikai = $('input[name="gikai"]').val();
+                const bousai = $('input[name="bousai"]:checked').val();
+                const kasai = $('input[name="kasai"]:checked').val();
+                const anzen  = $('input[name="anzen"]:checked').val();
+                const event  = $('input[name="event"]:checked').val();
+                const gikai = $('input[name="gikai"]:checked').val();
                 const msg = `${bousai}\n${kasai}\n${anzen}\n${event}\n${gikai}`;
                 sendText(msg);
                 return false;
