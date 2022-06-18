@@ -10,49 +10,39 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p class="mt-3">氏名(全角ひらがな)</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
-        </div>
-        <p class="mt-3">診察券番号(半角数字 不明の場合は"0")</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="bangou" required>
-        </div>
-        <p class="mt-3">一番お困りのことは?</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="shushoujou" required>
-        </div>
-        <p class="mt-3">いつからどのような様子ですか?</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="keika" required>
-        </div>
-        <p class="mt-3">有無("はい" か "いいえ")</p>
-        <div>
-            <input class="form-control w-100 mt-1" name="hatunetu" required>
-        </div>
-    　　<div>
+     　　<div>
         <p class="mt-3">どの分野のお知らせ配信を希望しますか？</p>
-         <div>
-          <input type="checkbox" name="bousai" value="1" disabled="disabled" checked> 防災情報※必須です
-         </div>
+　　　　　</div>
           <div>
-          <input type="checkbox" name="bouhan" value="2" > 防犯に関する情報
-         </div>
-         <div>
-          <input type="checkbox" name="kasai" value="3" > 火災予防に関する情報
-         </div>
-            <div>
-          <input type="checkbox" name="seikatsu" value="4" > 交通安全、健康に関する情報
-         </div>
-             <div>
-          <input type="checkbox" name="event" value="5" > 各種イベント情報
-         </div>
+          <p class="mt-3">防災に関する情報※必須です<br>
+       　 <input type="radio" name="bousai" value="配信希望"> 配信希望
+　　　　　<input type="radio" name="bousai" value="解除" disabled> 解除
+          </p>
+          </div>
           <div>
-          <input type="checkbox" name="gikai" value="6" > 市議会からのお知らせ
-         </div>
-          
-        
-        
+          <p class="mt-3">火災予防に関する情報<br>
+       　 <input type="radio" name="kasai" value="配信希望" required> 配信希望
+　　　　　<input type="radio" name="kasai" value="解除"> 解除
+          </p>
+          </div>
+          </div>
+          <p class="mt-3">交通安全、健康に関する情報<br>
+       　 <input type="radio" name="anzen" value="配信希望" required> 配信希望
+　　　　　<input type="radio" name="anzen" value="解除" > 解除
+          </p>
+          </div>
+          <div>
+          <p class="mt-3">各種イベント情報<br>
+       　 <input type="radio" name="event" value="配信希望" required> 配信希望
+　　　　　<input type="radio" name="event" value="解除" > 解除
+          </p>
+          </div>
+          <div>
+          <p class="mt-3">市議会からのお知らせ<br>
+       　 <input type="radio" name="gikai" value="配信希望" required> 配信希望
+　　　　　<input type="radio" name="gikai" value="解除" > 解除
+          </p>
+          </div>
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
     </form>
 
@@ -94,12 +84,12 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const bangou = $('input[name="bangou"]').val();
-                const shushoujou  = $('input[name="shushoujou"]').val();
-                const keika  = $('input[name="keika"]').val();
+                const bousai    = $('input[name="bousai"]').val();
+                const kasai = $('input[name="kasai"]').val();
+                const anzen  = $('input[name="anzen"]').val();
+                const event  = $('input[name="event"]').val();
                 const gikai = $('input[name="gikai"]').val();
-                const msg = `${name}\n${bangou}\n${shushoujou}\n${keika}\n${gikai}`;
+                const msg = `${bousai}\n${kasai}\n${anzen}\n${gikai}\n${gikai}`;
                 sendText(msg);
                 return false;
             });
